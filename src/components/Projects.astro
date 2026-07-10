@@ -1,0 +1,277 @@
+---
+const projects = [
+  {
+    title: "e-commerce-platform",
+    description: "Plataforma de comercio electrónico desarrollada con React y Node.js. Incluye carrito de compras, pasarela de pagos y panel de administración.",
+    tags: ["react", "nodejs", "mongodb", "stripe"],
+    language: "TypeScript",
+    languageColor: "#3178c6",
+    github: "#",
+    demo: "#",
+    stars: 24,
+    forks: 8,
+  },
+  {
+    title: "task-management-app",
+    description: "Aplicación de gestión de tareas con autenticación de usuarios, drag & drop y sincronización en tiempo real.",
+    tags: ["vuejs", "firebase", "tailwindcss"],
+    language: "JavaScript",
+    languageColor: "#f1e05a",
+    github: "#",
+    demo: "#",
+    stars: 18,
+    forks: 5,
+  },
+  {
+    title: "weather-dashboard",
+    description: "Dashboard del clima con pronósticos a 7 días, geolocalización y gráficos interactivos.",
+    tags: ["typescript", "openweather-api", "chartjs"],
+    language: "TypeScript",
+    languageColor: "#3178c6",
+    github: "#",
+    demo: "#",
+    stars: 12,
+    forks: 3,
+  }
+];
+---
+
+<section id="proyectos" class="projects">
+  <div class="projects-container">
+    <div class="section-header">
+      <div class="header-left">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--text-secondary)">
+          <path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8.5ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"></path>
+        </svg>
+        <h2 class="section-title">Proyectos</h2>
+      </div>
+      <span class="project-count">{projects.length} repositorios</span>
+    </div>
+
+    <div class="repo-list">
+      {projects.map((project) => (
+        <article class="repo-card">
+          <div class="repo-content">
+            <div class="repo-header">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--text-secondary)">
+                <path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8.5ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"></path>
+              </svg>
+              <a href={project.github} class="repo-name">{project.title}</a>
+              <span class="repo-visibility">Public</span>
+            </div>
+            <p class="repo-description">{project.description}</p>
+            <div class="repo-meta">
+              <span class="repo-language">
+                <span class="language-dot" style={`background-color: ${project.languageColor}`}></span>
+                {project.language}
+              </span>
+              <span class="repo-stat">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--text-secondary)">
+                  <path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Zm0 2.445L6.615 5.5a.75.75 0 0 1-.564.41l-3.097.45 2.24 2.184a.75.75 0 0 1 .216.664l-.528 3.084 2.769-1.456a.75.75 0 0 1 .698 0l2.77 1.456-.53-3.084a.75.75 0 0 1 .216-.664l2.24-2.183-3.096-.45a.75.75 0 0 1-.564-.41L8 2.694Z"></path>
+                </svg>
+                {project.stars}
+              </span>
+              <span class="repo-stat">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--text-secondary)">
+                  <path d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.251 2.251 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z"></path>
+                </svg>
+                {project.forks}
+              </span>
+              <div class="repo-tags">
+                {project.tags.map((tag) => (
+                  <span class="topic-tag">{tag}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div class="repo-actions">
+            <a href={project.demo} class="btn-outline-sm">Demo</a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  .projects {
+    padding: 0 24px 60px;
+  }
+
+  .projects-container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .section-title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .project-count {
+    font-size: 14px;
+    color: var(--text-secondary);
+  }
+
+  .repo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .repo-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 24px;
+    background: var(--bg-default);
+    border: 1px solid var(--border-default);
+    border-radius: 6px;
+    transition: border-color 0.15s;
+  }
+
+  .repo-card:hover {
+    border-color: var(--text-secondary);
+  }
+
+  .repo-content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .repo-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .repo-name {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-link);
+    text-decoration: none;
+  }
+
+  .repo-name:hover {
+    text-decoration: underline;
+  }
+
+  .repo-visibility {
+    padding: 0 8px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    border: 1px solid var(--border-default);
+    border-radius: 2em;
+    line-height: 18px;
+  }
+
+  .repo-description {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin: 0 0 16px 0;
+    line-height: 1.5;
+    max-width: 600px;
+  }
+
+  .repo-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .repo-language {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+
+  .language-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+
+  .repo-stat {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+
+  .repo-tags {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+
+  .topic-tag {
+    padding: 0 8px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-link);
+    background: rgba(56, 139, 253, 0.15);
+    border-radius: 2em;
+    line-height: 22px;
+  }
+
+  .repo-actions {
+    flex-shrink: 0;
+    margin-left: 16px;
+  }
+
+  .btn-outline-sm {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 12px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-primary);
+    background: var(--bg-default);
+    border: 1px solid var(--border-default);
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.15s, border-color 0.15s;
+  }
+
+  .btn-outline-sm:hover {
+    background: var(--bg-subtle);
+    border-color: var(--text-secondary);
+    text-decoration: none;
+  }
+
+  @media (max-width: 768px) {
+    .repo-card {
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .repo-actions {
+      margin-left: 0;
+    }
+
+    .repo-meta {
+      gap: 12px;
+    }
+  }
+</style>

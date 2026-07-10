@@ -1,0 +1,301 @@
+---
+const skills = [
+  { name: "JavaScript", level: 90 },
+  { name: "React", level: 85 },
+  { name: "Node.js", level: 80 },
+  { name: "TypeScript", level: 75 },
+  { name: "Astro", level: 70 },
+];
+---
+
+<section id="inicio" class="hero">
+  <div class="hero-container">
+    <div class="welcome-card">
+      <div class="welcome-header">
+        <div class="avatar">
+          <svg viewBox="0 0 16 16" width="64" height="64" fill="var(--text-secondary)">
+            <path d="M10.561 8.073a6.005 6.005 0 0 1 3.432 5.142.75.75 0 1 1-1.498.07 4.5 4.5 0 0 0-8.99 0 .75.75 0 0 1-1.498-.07 6.004 6.004 0 0 1 3.431-5.142 3.999 3.999 0 1 1 5.123 0ZM10.5 5a2.5 2.5 0 1 0-5 0 2.5 2.5 0 0 0 5 0Z"></path>
+          </svg>
+        </div>
+        <div class="welcome-text">
+          <h1>Tu Nombre</h1>
+          <p class="role">Desarrollador Web Full Stack</p>
+        </div>
+      </div>
+      <p class="bio">
+        Creo aplicaciones web modernas y funcionales. Apasionado por el código limpio
+        y las experiencias de usuario excepcionales.
+      </p>
+      <div class="welcome-actions">
+        <a href="#proyectos" class="btn-green">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8.5ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"></path>
+          </svg>
+          Ver Proyectos
+        </a>
+        <a href="#contacto" class="btn-outline">Contacto</a>
+      </div>
+    </div>
+
+    <div class="sidebar">
+      <div class="status-card">
+        <div class="status-header">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--text-secondary)">
+            <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"></path>
+            <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"></path>
+          </svg>
+          <span class="status-title">Getting started</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 60%"></div>
+        </div>
+        <p class="progress-text">3/5 habilidades destacadas</p>
+      </div>
+
+      <div class="skills-card">
+        <h3 class="card-title">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--text-secondary)">
+            <path d="M0 1.75A.75.75 0 0 1 .75 1h4.253c.621 0 1.223.244 1.666.677L8 2.33l1.381-1.903A2.288 2.288 0 0 1 11.096 1h4.154a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.29a.75.75 0 0 0-.53.22l-1.47 1.47a.75.75 0 1 1-1.06-1.06l1.47-1.47a.75.75 0 0 0-.53-.22H1.5a.75.75 0 0 1-.75-.75Zm.75 2.25v8.5h13.25v-8.5Z"></path>
+          </svg>
+          Habilidades
+        </h3>
+        <div class="skills-list">
+          {skills.map((skill) => (
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">{skill.name}</span>
+                <span class="skill-level">{skill.level}%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" style={`width: ${skill.level}%`}></div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  .hero {
+    padding: 100px 24px 60px;
+    min-height: 100vh;
+  }
+
+  .hero-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 24px;
+    align-items: start;
+  }
+
+  .welcome-card {
+    background: var(--bg-default);
+    border: 1px solid var(--border-default);
+    border-radius: 6px;
+    padding: 24px;
+  }
+
+  .welcome-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .avatar {
+    width: 64px;
+    height: 64px;
+    background: var(--bg-canvas);
+    border-radius: 50%;
+    border: 1px solid var(--border-default);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .welcome-text h1 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .role {
+    margin: 4px 0 0 0;
+    font-size: 14px;
+    color: var(--text-secondary);
+  }
+
+  .bio {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-default);
+  }
+
+  .welcome-actions {
+    display: flex;
+    gap: 8px;
+  }
+
+  .btn-green {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    background: var(--btn-green);
+    border: 1px solid rgba(240, 246, 252, 0.1);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.15s;
+    text-decoration: none;
+  }
+
+  .btn-green:hover {
+    background: var(--btn-green-hover);
+    text-decoration: none;
+  }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+    background: var(--bg-default);
+    border: 1px solid var(--border-default);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+    text-decoration: none;
+  }
+
+  .btn-outline:hover {
+    background: var(--bg-subtle);
+    border-color: var(--text-secondary);
+    text-decoration: none;
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .status-card,
+  .skills-card {
+    background: var(--bg-default);
+    border: 1px solid var(--border-default);
+    border-radius: 6px;
+    padding: 16px;
+  }
+
+  .status-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .status-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .progress-bar {
+    height: 8px;
+    background: var(--bg-canvas);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 8px;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: var(--btn-green);
+    border-radius: 6px;
+    transition: width 0.5s ease;
+  }
+
+  .progress-text {
+    margin: 0;
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+
+  .card-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 16px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .skill-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .skill-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .skill-name {
+    font-size: 13px;
+    color: var(--text-primary);
+  }
+
+  .skill-level {
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+
+  .skill-bar {
+    height: 6px;
+    background: var(--bg-canvas);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .skill-fill {
+    height: 100%;
+    background: var(--accent-blue);
+    border-radius: 6px;
+    transition: width 0.5s ease;
+  }
+
+  @media (max-width: 900px) {
+    .hero-container {
+      grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+      order: -1;
+    }
+  }
+</style>
