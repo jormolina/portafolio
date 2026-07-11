@@ -1,16 +1,56 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
 import Hero from '../components/Hero.astro';
 import Projects from '../components/Projects.astro';
-import Contact from '../components/Contact.astro';
-import Navbar from '../components/Navbar.astro';
+import Sidebar from '../components/Sidebar.astro';
+import ContactForm from '../components/ContactForm.astro';
 ---
 
 <Layout title="Jorge Molina | Portafolio">
   <Navbar />
   <main>
     <Hero />
-    <Projects />
-    <Contact />
+    <div class="main-content">
+      <div class="content-left">
+        <Projects />
+      </div>
+      <aside class="content-right">
+        <Sidebar />
+      </aside>
+    </div>
+    <ContactForm />
   </main>
 </Layout>
+
+<style is:global>
+  .main-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px 60px;
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 24px;
+    align-items: start;
+  }
+
+  .content-left {
+    min-width: 0;
+  }
+
+  .content-right {
+    position: sticky;
+    top: 80px;
+  }
+
+  @media (max-width: 900px) {
+    .main-content {
+      grid-template-columns: 1fr;
+    }
+
+    .content-right {
+      order: -1;
+      position: static;
+    }
+  }
+</style>

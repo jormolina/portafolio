@@ -1,0 +1,200 @@
+---
+---
+
+<section id="contacto" class="contact-form-section">
+  <div class="contact-form-container">
+    <div class="section-header">
+      <div class="header-left">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--text-secondary)">
+          <path d="M1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25v-8.5C0 2.784.784 2 1.75 2ZM1.5 12.251c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25V5.809L8.38 9.397a.75.75 0 0 1-.76 0L1.5 5.809v6.442Zm13-8.181v-.32a.25.25 0 0 0-.25-.25H1.75a.25.25 0 0 0-.25.25v.32L8 7.88Z"></path>
+        </svg>
+        <h2 class="section-title">Contacto</h2>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <div class="card-header">
+        <h3>Enviar mensaje</h3>
+        <span class="badge">Formulario</span>
+      </div>
+      <form class="contact-form" action="#" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Nombre</label>
+            <input type="text" id="name" name="name" required placeholder="Tu nombre" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="tu@email.com" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="subject">Asunto</label>
+          <input type="text" id="subject" name="subject" required placeholder="Asunto del mensaje" />
+        </div>
+        <div class="form-group">
+          <label for="message">Mensaje</label>
+          <textarea id="message" name="message" rows="6" required placeholder="Escribe tu mensaje aquí..."></textarea>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn-green">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+              <path d="M.981 3.21c.176-.436.668-.578 1.074-.32l4.024 2.515a.75.75 0 0 1 0 1.299L2.055 13.21c-.406.259-.898.117-1.074-.32A.75.75 0 0 1 .98 12.4V3.6a.75.75 0 0 1 0 0v-.39Z"></path>
+              <path d="M9.5 3a.75.75 0 0 1 .75.75v2.25H12a.75.75 0 0 1 0 1.5H10.25V9.5a.75.75 0 0 1-1.5 0V7.25H6a.75.75 0 0 1 0-1.5h2.75V3.75A.75.75 0 0 1 9.5 3Z"></path>
+            </svg>
+            Enviar Mensaje
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  .contact-form-section {
+    padding: 0 24px 60px;
+  }
+
+  .contact-form-container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .section-title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .form-card {
+    background: var(--bg-default);
+    border: 1px solid var(--border-default);
+    border-radius: 6px;
+    padding: 24px;
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-default);
+  }
+
+  .card-header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .badge {
+    padding: 0 8px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    background: var(--bg-canvas);
+    border: 1px solid var(--border-default);
+    border-radius: 2em;
+    line-height: 22px;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .form-group label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 5px 12px;
+    font-size: 14px;
+    font-family: inherit;
+    color: var(--text-primary);
+    background: var(--bg-canvas);
+    border: 1px solid var(--border-default);
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: var(--text-link);
+    box-shadow: 0 0 0 3px rgba(56, 139, 253, 0.3);
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: var(--text-secondary);
+  }
+
+  .form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 8px;
+  }
+
+  .btn-green {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    background: var(--btn-green);
+    border: 1px solid rgba(240, 246, 252, 0.1);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+
+  .btn-green:hover {
+    background: var(--btn-green-hover);
+  }
+
+  @media (max-width: 768px) {
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
